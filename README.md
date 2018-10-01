@@ -4,7 +4,7 @@ Se plantea la creación de un almacén para canciones mediante el uso de un serv
 
 El porqué del desarrollo de esta aplicación se debe a que soy DJ y siempre he pensado que se debería de disponer de una aplicación que sustituya a un pendrive, puesto que estos dispositivos son pequeños y fáciles de extraviarse. También se fomentará el progreso de la carrera de un DJ y como peculiaridad destacar que funcionará también sin conexión a Internet, almacenando las canciones de las que disponía en la última conexión a Internet.
 
-## Herramientas a usar
+### Herramientas a usar
 
 Todo es provisional a día de hoy puesto que se va a continuar investigando sobre que herramientas emplear y en el caso de que se encuentre algo más idóneo a lo elegido, se procederá a realizar un cambio.
 
