@@ -31,7 +31,7 @@ python cancion.py
 
 ### Uso
 
-Los métodos realizados en este hito comprueban si dos canciones sonarían bien a la hora de mezclarse, comprobar si hay conexión a Internet para uso futuro y lectura de campos de JSON.
+Los métodos realizados comprueban si dos canciones sonarían bien a la hora de mezclarse, comprobar si hay conexión a Internet para uso futuro y lectura de campos de JSON.
 
 ### Por qué he elegido cada cosa
 [Visita](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/explicacion.md)
