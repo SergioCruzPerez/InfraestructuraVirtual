@@ -1,0 +1,22 @@
+{
+    "songs":[
+        {
+          "id":0,
+          "nombre":"Snakes",
+          "artista":"Sikdope",
+          "ruta":"../music/Snakes.mp3",
+          "bpms":128.0,
+          "claveN":9,
+          "claveL":"A"
+        },
+        {
+          "id":1,
+          "nombre":"Badman",
+          "artista":"SunneryJames&RyanMarciano",
+          "ruta":"../music/Badman.mp3",
+          "bpms":130.0,
+          "claveN":11,
+          "claveL":"A"
+        }
+    ]
+}
