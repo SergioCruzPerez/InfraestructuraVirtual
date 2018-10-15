@@ -11,8 +11,8 @@ class canciones():
 
     def __init__(self,n):
         try:
-            if os.path.exists('../data/unacancion.json'):
-                with open('../data/unacancion.json', 'r') as f:
+            if os.path.exists('data/unacancion.json'):
+                with open('data/unacancion.json', 'r') as f:
                     info = json.load(f)
                     i = 0
                     while i < len(info['songs']): #Cancion que deseo cargar
@@ -36,7 +36,7 @@ class canciones():
 
     #Indica si la mezcla sonaría bien, comparando bpms.
     def compararBPMS(self,otra):
-         with open('../data/unacancion.json') as f:
+         with open('data/unacancion.json') as f:
             otrainfo = json.load(f)
             i=0
             while i < len(otrainfo['songs']): #Cancion que deseo cargar
@@ -53,7 +53,7 @@ class canciones():
                 return False
 
     def compararKey(self,otra):
-          with open('../data/unacancion.json') as f:
+          with open('data/unacancion.json') as f:
              otrainfo = json.load(f)
              i=0
              while i < len(otrainfo['songs']): #Cancion que deseo cargar
