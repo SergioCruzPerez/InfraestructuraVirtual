@@ -1,5 +1,5 @@
 ﻿# Almacen musical DJ
-[![Build Status](https://travis-ci.org/SergioCruzPerez/InfraestructuraVirtual.svg?branch=master)](https://travis-ci.org/SergioCruzPerez/IInfraestructuraVirtual)
+[![Build Status](https://travis-ci.org/SergioCruzPerez/InfraestructuraVirtual.svg?branch=master)](https://travis-ci.org/SergioCruzPerez/InfraestructuraVirtual)
 
 
 Se plantea la creación de un almacén para canciones mediante el uso de un servidor en la nube. Estas canciones serán clasificadas dependiendo del género al que pertenezcan, bpms y claves. Este proyecto se ha desarrollado con la idea de hacer más sencilla la labor del DJ, funcionando como un dispositivo pendrive, además de proporcionar la posibilidad de compartir la música mezclada o producida con otros miembros de la comunidad, a la vez que uno pueda enriquecerse con todo tipo de música que se encuentre en la aplicación.
