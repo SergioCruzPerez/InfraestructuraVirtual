@@ -41,6 +41,6 @@ Los métodos realizados comprueban si dos canciones sonarían bien a la hora de 
 
 He elegido Heroku porque es gratuito, intuitivo y he encontrado mucha documentación al respecto que sé que me ayudaría en problemas presentes y futuros que se me pudieran presentar. Destacar que la comunidad de Heroku es muy activa y esto se agradece.
 
-**Clicke aquí para probar la app** : [AlmacénDJ](https://almacen-dj.herokuapp.com/)
+**despliegue** : [AlmacénDJ](https://almacen-dj.herokuapp.com/)
 
 Documentación [heroku](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/Heroku.md)
