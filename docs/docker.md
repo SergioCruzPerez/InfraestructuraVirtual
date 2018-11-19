@@ -44,7 +44,7 @@ sudo apt-get install docker-ce**
 
 Si todo ha ido correctamente deberá aparecer lo que se muestra en la imagen
 
-![img](https://github.com/joseviro/ProyectoTPV/blob/master/docs/img/dockerhello.png)
+![img]()
 
 Con *systemctl status docker.service* podríamos ver si el servicio de docker está activo o no.
 
@@ -56,7 +56,7 @@ Completada la instalación procedemos a:
 Crear un **Docker file** (Python):
 Documentación: https://docs.docker.com/samples/library/python/#run-a-single-python-script
 
-Aquí tienes  el enlace a mi [dockerfile](https://github.com/joseviro/ProyectoTPV/blob/master/Dockerfile).
+Aquí tienes  el enlace a mi [dockerfile]().
 
 ## Para construir y probar que todo funciona correctamente en local basta con:
 
@@ -75,10 +75,10 @@ https://docs.docker.com/docker-hub/builds/#understand-the-build-process
 
 Creamos una cuenta de docker hub, sincronizándola con github para que todo cambio que se efectúe en github también se haga en docker.
 
-![img](https://github.com/joseviro/ProyectoTPV/blob/master/docs/img/dockerhub.png)
+![img]()
 
 
-![img](https://github.com/joseviro/ProyectoTPV/blob/master/docs/img/linkdockergithub.png)
+![img]()
 
 Tenemos que clickar en create -> create automated build y tras indicar a que proyecto queremos vincular el docker y una pequeña descripción, estará todo listo
 
@@ -109,12 +109,8 @@ Documentación: https://devcenter.heroku.com/articles/build-docker-images-heroku
 
 Este archivo es necesario para indicar como debe construirse el contenedor y como ejecutarse en caso de que no queramos que ejecute la orden **Run** del dockerfile
 
-[Enlace a mi heroku.yml](https://github.com/joseviro/ProyectoTPV/blob/master/heroku.yml)
+[Enlace a mi heroku.yml]()
 
 
 **heroku apps:info -a contenedoriv** nos confirmaría que lo que hemos subido es un contenedor y no una app.
-~~~
 
-![img](https://github.com/joseviro/ProyectoTPV/blob/master/docs/img/stackContainer.png)
-
-![img](https://github.com/joseviro/ProyectoTPV/blob/master/docs/img/Stackheroku-18.png)
