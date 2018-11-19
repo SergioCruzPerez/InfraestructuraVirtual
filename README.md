@@ -44,3 +44,10 @@ He elegido Heroku porque es gratuito, intuitivo y he encontrado mucha documentac
 **despliegue** : [AlmacénDJ](https://almacen-dj.herokuapp.com/)
 
 Documentación [heroku](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/Heroku.md)
+
+## Docker
+En la [Documentación](https://github.com/joseviro/ProyectoTPV/blob/master/docs/docker.md) se explican todos los pasos realizados así como algunas utilidades, ordenes para probar el contenedor etc.
+
+Contenedor: https://contenedortpv.herokuapp.com/
+
+Repositorio en docker hub: https://hub.docker.com/r/jmvinasr/proyectotpv/
