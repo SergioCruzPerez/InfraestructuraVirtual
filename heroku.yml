@@ -1,5 +1,5 @@
 build:
-	docker:
-		web: Dockerfile
+ docker:
+  web: Dockerfile
 run:
-	web: gunicorn APLICACION_WEB:app --log-file -
+ web: gunicorn APLICACION_WEB:app --log-file -
