@@ -30,6 +30,10 @@ def main():
     }
     })
 
+@app.route('/status')
+def status():
+	return jsonify(status="OK")
+
 @app.errorhandler(404)
 def page_not_found(error):
   		return "Not found", 404
