@@ -32,7 +32,7 @@ def mostrar_canciones():
 	cancion = c.fetchall()
 
 	for song in cancion:
-		canciones += str(song[0]) + " " + str(song[1]) + " " + str(song[2]) + " " + str(song[3]) + " " + str(song[4]) + "\n"
+		canciones += "Cancion:" + str(song[0]) + " Artista:" + str(song[1]) + " BPMS:" + str(song[2]) + " ClaveNumero:" + str(song[3]) + " ClaveLetra:" + str(song[4]) + "     "
 
 
 	c.close()
