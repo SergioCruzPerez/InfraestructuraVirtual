@@ -34,10 +34,11 @@ def mostrar_canciones():
 	for song in cancion:
 		canciones += str(song[0]) + " " + str(song[1]) + " " + str(song[2]) + " " + str(song[3]) + " " + str(song[4]) + "\n"
 
-	print(canciones)
 
 	c.close()
 	conexion.close()
+	
+	return canciones
 	
 
 def devuelve_bpms(cancion):
