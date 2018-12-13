@@ -4,80 +4,43 @@
 import json
 import os
 import socket
+import db
 
-class canciones():
-    """Clase para el microservicio DJ"""
-
-
-    def __init__(self,n):
-        try:
-            if os.path.exists('data/unacancion.json'):
-                with open('data/unacancion.json', 'r') as f:
-                    info = json.load(f)
-                    i = 0
-                    while i < len(info['songs']): #Cancion que deseo cargar
-                        if info['songs'][i]['nombre'] == n:
-                            self.nombre = info['songs'][i]['nombre']
-                            self.artista = info['songs'][i]['artista']
-                            self.ruta = info['songs'][i]['ruta']
-                            self.bpms = info['songs'][i]['bpms']
-                            self.claveN = info['songs'][i]['claveN']
-                            self.claveL = info['songs'][i]['claveL']
-                            break
-                        else:
-                            i+=1
-
-            else:
-                raise IOError("No se encuentra 'unacancion.json'")
-
-        except IOError as fallo:
-             print("Error {} leyendo unacancion.json".format( fallo ) )
+#Funciones para el microservicio DJ
 
 
     #Indica si la mezcla sonaría bien, comparando bpms.
-    def compararBPMS(self,otra):
-         with open('data/unacancion.json') as f:
-            otrainfo = json.load(f)
-            i=0
-            while i < len(otrainfo['songs']): #Cancion que deseo cargar
-                if otrainfo['songs'][i]['nombre'] == otra:
-                    otrabpms= otrainfo['songs'][i]['bpms']
-                    break
-                else:
-                    i+=1
+def compararBPMS(nombrecancion,nombredeotra):
+  bpms = db.devuelve_bpms(nombrecancion)
+  bpmsotra = db.devuelve_bpms(nombredeotra)
 
-            #Suena bien si ambas canciones se mueven entre un rango de 10bpms
-            if abs( self.bpms - otrabpms ) < 10 :
-                return True
-            else:
-                return False
-
-    def compararKey(self,otra):
-          with open('data/unacancion.json') as f:
-             otrainfo = json.load(f)
-             i=0
-             while i < len(otrainfo['songs']): #Cancion que deseo cargar
-                 if otrainfo['songs'][i]['nombre'] == otra:
-                     otrakeyN= otrainfo['songs'][i]['claveN']
-                     otrakeyL= otrainfo['songs'][i]['claveL']
-                     break
-                 else:
-                     i+=1
+  #Suena bien si ambas canciones se mueven entre un rango de 10bpms
+  if abs( float(bpms) - float(bpmsotra) ) < 10.0 :
+     return True
+  else:
+     return False
+	
+    #Indica si la mezcla sonaría bien comparando clane número-letra
+def compararKey(nombrecancion,nombredeotra):
+	claveN = db.devuelve_numero(nombrecancion)
+	otrakeyN = db.devuelve_numero(nombredeotra)
+	claveL = db.devuelve_letra(nombrecancion)
+	otrakeyL = db.devuelve_letra(nombredeotra)  
 
 
-             #Para que suene bien..
-             if abs( self.claveN - otrakeyN ) <= 2:
-                uno = ord (self.claveL)
-                dos = ord (otrakeyL)
-                if   uno  -   dos <=1  :
-                    return True
-                else:
-                    return False
-             else:
-                return False
+ 	#Para que suene bien..
+	if abs( claveN - otrakeyN ) <= 2:
+		uno = claveL
+		dos = otrakeyL
+		if   uno  -   dos <=1 or dos - uno <=1  :
+			return True
+		else:
+			return False
+	else:
+		return False
 
-            #Detectar si tengo conexion a Internet
-    def HayInternet(self):
+    #Detectar si tengo conexion a Internet
+def HayInternet():
          testConn = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
          try:
                 testConn.connect(('http://google.es', 80))
@@ -86,3 +49,12 @@ class canciones():
          except:
                 testConn.close()
                 return False
+
+    #Función que guardará de lo que dispongo en la BBDD por si en algún momento me encuentro sin Internet
+def Copia():
+	canciones = ""
+	if HayInternet():
+		canciones = db.mostrar_canciones()
+	
+	return canciones
+		
