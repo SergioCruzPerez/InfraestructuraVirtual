@@ -35,7 +35,16 @@ def main():
 def aniadir(nombre,artista,bpm,n,l):
 	db.insertar_cancion(nombre,artista,bpm,n,l)
 	return jsonify(status="Cancion insertada correctamente")
+
+@app.route("/eliminar/<nombre>", methods=['GET'])
+def eliminar(nombre):
+	db.borrar_cancion(nombre,artista,bpm,n,l)
+	return jsonify(status="Cancion eliminada correctamente")
         
+@app.route("/mostrar")
+def mostrar():
+	canciones = db.mostrar_canciones()
+	print(canciones)
 
 @app.route('/status')
 def status():
