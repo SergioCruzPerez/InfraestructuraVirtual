@@ -2,7 +2,8 @@ from flask import Flask,jsonify,request,Response,render_template
 import sys,os.path
 from flask.json import JSONEncoder
 sys.path.append("source/")
-from cancion import canciones
+import cancion
+import db
 
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True #Activamos el embellecedor de JSON que por defecto está desactivado.
