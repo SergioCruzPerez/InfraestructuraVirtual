@@ -44,7 +44,7 @@ def eliminar(nombre):
         
 @app.route("/mostrar")
 def mostrar():
-	db.mostrar_canciones()
+	return jsonify(db.mostrar_canciones())
 
 @app.route('/status')
 def status():
