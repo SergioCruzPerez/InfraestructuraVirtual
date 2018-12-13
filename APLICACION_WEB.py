@@ -1,5 +1,6 @@
 from flask import Flask,jsonify,request,Response,render_template
 import sys,os.path
+import json
 from flask.json import JSONEncoder
 sys.path.append("source/")
 import cancion
@@ -43,8 +44,7 @@ def eliminar(nombre):
         
 @app.route("/mostrar")
 def mostrar():
-	canciones = db.mostrar_canciones()
-	print(canciones)
+	db.mostrar_canciones()
 
 @app.route('/status')
 def status():
