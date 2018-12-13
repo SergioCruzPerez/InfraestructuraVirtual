@@ -4,7 +4,7 @@
 import os
 import psycopg2
 
-DATABASE_URL = os.environ['DATABASE_URL']
+DATABASE_URL = "postgres://wvatsirycufwhc:216a7248a597969d2e9afd4b6f6a7b63c529ab261c73f26c2cbb97bb002edfa2@ec2-54-217-237-93.eu-west-1.compute.amazonaws.com:5432/db6mssc729tmgi"
 
 def insertar_cancion(nombre,artista,bpms,claveN,claveL):
 	conexion = psycopg2.connect(DATABASE_URL, sslmode='require')
