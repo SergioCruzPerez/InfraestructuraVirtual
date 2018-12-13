@@ -1,4 +1,4 @@
-from flask import Flask,jsonify,request,Response
+from flask import Flask,jsonify,request,Response,render_template
 import sys,os.path
 from flask.json import JSONEncoder
 sys.path.append("source/")
@@ -9,7 +9,7 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True #Activamos el embellecedor de J
 
 @app.route("/")
 def main():
-        return jsonify({
+	return jsonify({
     "status": "OK",
     "ejemplo":{
     "Bpms":{
@@ -29,6 +29,9 @@ def main():
     }
     }
     })
+@app.route("/ayuda")
+def info():
+      return render_template('index.html')  
 
 @app.route('/status')
 def status():
