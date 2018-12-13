@@ -30,9 +30,12 @@ def main():
     }
     }
     })
-@app.route("/ayuda")
-def info():
-      return render_template('index.html')  
+
+@app.route("/aniadir/<nombre>/<artista>/<float:bpm>/<int:n>/<l>", methods=['GET'])
+def aniadir(nombre,artista,bpm,n,l):
+	db.insertar_cancion(nombre,artista,bpm,n,l)
+	return jsonify(status="Cancion insertada correctamente")
+        
 
 @app.route('/status')
 def status():
