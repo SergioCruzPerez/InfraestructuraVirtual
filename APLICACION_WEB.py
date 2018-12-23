@@ -39,12 +39,30 @@ def aniadir(nombre,artista,bpm,n,l):
 
 @app.route("/eliminar/<nombre>", methods=['GET'])
 def eliminar(nombre):
-	db.borrar_cancion(nombre,artista,bpm,n,l)
+	db.borrar_cancion(nombre)
 	return jsonify(status="Cancion eliminada correctamente")
         
 @app.route("/mostrar")
 def mostrar():
 	return jsonify(db.mostrar_canciones())
+
+@app.route("/compararBPMS/<nombre>/<otra>")
+def compararBPMS(nombre,otra):
+	if(cancion.compararBPMS(nombre,otra)):
+		return jsonify(status="Canciones suenan bien")
+	else:
+		return jsonify(status="Canciones suenan mal")
+
+@app.route("/compararKey/<nombre>/<otra>")
+def compararKey(nombre,otra):
+	if(cancion.compararKey(nombre,otra)):
+		return jsonify(status="Canciones suenan bien")
+	else:
+		return jsonify(status="Canciones suenan mal")
+
+@app.route("/recomendacion/<nombre>")
+def recomendacion(nombre):
+	return jsonify(db.buscar_adecuadas(nombre))
 
 @app.route('/status')
 def status():
