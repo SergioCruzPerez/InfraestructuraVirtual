@@ -14,21 +14,26 @@ def main():
 	return jsonify({
     "status": "OK",
     "ejemplo":{
-    "Bpms":{
-        "ruta":"/bpms",
-        "valor": "{Rima: True o False}"
+    "Añadir nueva canción":{
+        "ruta":"aniadir/<nombre>/<artista>/<float:bpm>/<int:n>/<l>",
+        "valor": "{Insertado correctamente: True o False}"
     },
-    "Cancion":{
-        "ruta":"/song",
-        "valor": "{Carga: True o False}"
+    "Eliminar canción":{
+        "ruta":"eliminar/<nombre>",
+        "valor": "{Eliminado correctamente: True o False}"
     },
+    "Mostrar canciones":
+               { "ruta": "/mostrar",
+                 "valor": "{Canciones almacenadas}"},
+    "BPMS":
+                {"ruta": "/compararBPMS/<nombre>/<otra>",
+                "valor": "{Suenan bien: True o False}"},
     "Key":
-               { "ruta": "/key",
-                 "valor": "{Rima: True o False}"},
-    "Internet":
-                {"ruta": "/internet",
-                "valor": "{Conexion: True o False}"
-    }
+                {"ruta": "/compararKey/<nombre>/<otra>",
+                "valor": "{Suenan bien: True o False}"},
+    "Recomendación":
+		 {"ruta": "/recomendacion/<nombre>",
+                "valor": "{Canciones que sonarían bien con la pasada como argumento}"},
     }
     })
 
@@ -63,6 +68,7 @@ def compararKey(nombre,otra):
 @app.route("/recomendacion/<nombre>")
 def recomendacion(nombre):
 	return jsonify(db.buscar_adecuadas(nombre))
+
 
 @app.route('/status')
 def status():
