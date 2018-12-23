@@ -122,6 +122,7 @@ def numero_canciones_almacenadas():
 
 def buscar_adecuadas(nombre):
 	conexion = psycopg2.connect(DATABASE_URL, sslmode='require')
+	canciones = ""
 	b = conexion.cursor()
 	b.execute("SELECT bpms FROM canciones WHERE nombre=%s", [nombre])
 	bpm = b.fetchone()
@@ -138,15 +139,15 @@ def buscar_adecuadas(nombre):
 	definitivo = conexion.cursor()
 	definitivo.execute("SELECT * FROM canciones WHERE ABS(bpms-%s) <= 5 AND ABS(claveN-%s) <= 2 ORDER BY nombre;", [bpm,claven])
 
-	print("Posibilidades:",definitivo.rowcount)
-	row = definitivo.fetchone()
+	row = definitivo.fetchall()
 
-	while row is not None:
-		print(row)
-		row = definitivo.fetchone()
+	for song in row:
+		canciones += "Cancion:" + str(song[0]) + " Artista:" + str(song[1]) + " BPMS:" + str(song[2]) + " ClaveNumero:" + str(song[3]) + " ClaveLetra:" + str(song[4]) + "     "
 
 	definitivo.close()
 	conexion.close()
+
+	return canciones
 	
 
 	
