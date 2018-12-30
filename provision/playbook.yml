@@ -5,14 +5,18 @@
   - name: Actualizar los paquetes del sistema
     command: sudo apt-get update
 
-  - name: Clonar mi repositorio
-    git: repo=https://github.com/SergioCruzPerez/InfraestructuraVirtual.git dest=InfraestructuraVirtual/ clone=yes force=yes
- 
   - name: Instalar Git
     command: sudo apt-get install git
 
+  - name: Clonar mi repositorio
+    git: repo=https://github.com/SergioCruzPerez/InfraestructuraVirtual.git dest=InfraestructuraVirtual/ clone=yes force=yes
+
   - name: Instalar Python
-    command: sudo apt-get -y install python python3
+    command: sudo apt-get -y install python
+
+  - name: Instalar Pip
+    command: sudo apt-get -y install python-pip
+
 
 
 
