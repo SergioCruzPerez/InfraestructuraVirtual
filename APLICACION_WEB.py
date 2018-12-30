@@ -33,7 +33,7 @@ def main():
                 "valor": "{Suenan bien: True o False}"},
     "Recomendacion":
 		 {"ruta": "/recomendacion/<nombre>",
-                "valor": "{Canciones que sonarían bien con la pasada como argumento}"},
+                "valor": "{Canciones que sonarian bien con la pasada como argumento}"},
     }
     })
 
