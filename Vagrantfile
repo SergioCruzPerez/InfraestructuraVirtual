@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
     azure.vm_image_urn = 'Canonical:UbuntuServer:16.04-LTS:16.04.201612210'
 		azure.vm_size = 'Basic_A0'
 		azure.location = 'westeurope'
-		azure.vm_name = 'serviciodalmacenddjdefini'
+		azure.vm_name = 'almacendecancionesdj'
 		azure.tcp_endpoints = '80'
 
     azure.tenant_id = ENV['AZURE_TENANT_ID']
