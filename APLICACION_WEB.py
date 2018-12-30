@@ -7,18 +7,18 @@ import cancion
 import db
 
 app = Flask(__name__)
-app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True #Activamos el embellecedor de JSON que por defecto está desactivado.
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True #Activamos el embellecedor de JSON que por defecto esta desactivado.
 
 @app.route("/")
 def main():
 	return jsonify({
     "status": "OK",
     "ejemplo":{
-    "Añadir nueva canción":{
+    "Aniadir nueva cancion":{
         "ruta":"aniadir/<nombre>/<artista>/<float:bpm>/<int:n>/<l>",
         "valor": "{Insertado correctamente: True o False}"
     },
-    "Eliminar canción":{
+    "Eliminar cancion":{
         "ruta":"eliminar/<nombre>",
         "valor": "{Eliminado correctamente: True o False}"
     },
@@ -31,7 +31,7 @@ def main():
     "Key":
                 {"ruta": "/compararKey/<nombre>/<otra>",
                 "valor": "{Suenan bien: True o False}"},
-    "Recomendación":
+    "Recomendacion":
 		 {"ruta": "/recomendacion/<nombre>",
                 "valor": "{Canciones que sonarían bien con la pasada como argumento}"},
     }
