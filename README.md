@@ -11,8 +11,7 @@ El porqué del desarrollo de esta aplicación se debe a que soy DJ y siempre he 
 Todo es provisional a día de hoy puesto que se va a continuar investigando sobre que herramientas emplear y en el caso de que se encuentre algo más idóneo a lo elegido, se procederá a realizar un cambio.
 
 * Lenguaje de programación empleado: Python.
-* Se empleará MYSQL para almacenar todo tipo de información necesaria.
-* Se usará JSON ya que es un lenguaje ideal para el intercambio de datos, además de ser totalmente independiente del lenguaje de programación.
+* He empleado la funcionalidad de [Postgres SQL que ofrece Heroku](https://devcenter.heroku.com/articles/heroku-postgresql) gracias al uso de psycopg.
 * Para poder probar el funcionamiento de las clases y métodos que componen nuestra aplicación usaremos Unittest.
 * Framework a emplear será Flask.
 
