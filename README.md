@@ -54,4 +54,5 @@ Repositorio en docker hub: https://hub.docker.com/r/sergiocruzperez/infraestruct
 
 ## IaaS Vagrant
 Despliegue final:
+
 [Consultar documentación de todo lo realizado]()
