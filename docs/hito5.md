@@ -79,13 +79,18 @@ Fabric es una biblioteca de alto nivel de Python (2.7, 3.4+) diseñada para ejec
 Ejecutaremos cualquier función del fichero fabfile.py de la siguiente forma:
 
 ~~~
-fab -f despliegue/fabfile.py -H vagrant@ivgestion-ip.cloudapp.azure.com Iniciar
+fab -f despliegue/fabfile.py -H vagrant@51.144.180.183 (Tarea a realizar)
 ~~~
 
 Ejemplos de uso:
 
-![img](img/fabIniciar.png)
-![img](img/fabIniciar.png)
-![img](img/fabIniciar.png)
-![img](img/fabIniciar.png)
-![img](img/fabIniciar.png)
+- Ejecución de tarea Start
+![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/Start.png)
+
+- Ejecución de tarea Stop
+![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/Stop.png)
+
+- Ejecución de tarea Install
+![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/Install.png)
+
+
