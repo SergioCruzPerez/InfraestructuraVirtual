@@ -93,4 +93,7 @@ Ejemplos de uso:
 - Ejecución de tarea Install
 ![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/Install.png)
 
+- Ejecución de tarea Delete
+![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/Delete.png)
+
 
