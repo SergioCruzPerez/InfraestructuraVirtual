@@ -6,7 +6,7 @@ Esto es un complemento de Vagrant que agrega el proveedor de Microsoft Azure a V
 
 Pero antes de empezar tenemos que tener instalado [Vagrant](https://www.vagrantup.com/downloads.html) el cual podríamos instalarlo desde terminal o desde la página web.
 
-Se debe de bajar desde la página web puesto que si no tendremos problemas de diversos tipo como podrían ser errores en la verificación de los certificados SSL.
+Se debe de bajar desde la página web puesto que si no tendremos problemas de diversos tipos como podrían ser errores en la verificación de los certificados SSL.
 
 Posteriormente debemos de tener instalado el **plugin** que proporciona Vagrant para Azure de la siguiente forma:
 
@@ -24,7 +24,7 @@ Debemos de seguir los siguientes pasos:
 
 2. **az login** para iniciar sesión en azure.
 
-3. Ejecute **az ad sp create-for-rbac** para crear una aplicación de Azure Active Directory con acceso a Azure Resource Manager para la suscripción actual de Azure. Si desea ejecutar esto para ina suscripción de Azure distinta emplee **az account set --subscription 'your subscription name'**
+3. Ejecute **az ad sp create-for-rbac** para crear una aplicación de Azure Active Directory con acceso a Azure Resource Manager para la suscripción actual de Azure. Si desea ejecutar esto para una suscripción de Azure distinta emplee **az account set --subscription 'your subscription name'**
 
 4. Una vez realizado esto ejecutaremos **az ad sp create-for-rbac** y **az account list --query "[?isDefault].id" -o tsv**.
 
