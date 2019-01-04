@@ -52,6 +52,6 @@ Contenedor: [https://contenedoriv.herokuapp.com/](https://contenedoriv.herokuapp
 Repositorio en docker hub: https://hub.docker.com/r/sergiocruzperez/infraestructuravirtual/
 
 ## IaaS Vagrant
-Despliegue final: 40.113.148.243
+Despliegue final: 40.68.82.32
 
-[Consultar documentación de todo lo realizado](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/hito5.md)
+[Consultar documentación de todo lo realizado](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/documentacion.md)
