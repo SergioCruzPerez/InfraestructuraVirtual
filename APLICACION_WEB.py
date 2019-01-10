@@ -5,6 +5,7 @@ from flask.json import JSONEncoder
 sys.path.append("source/")
 import cancion
 import db
+import jinja2
 
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True #Activamos el embellecedor de JSON que por defecto esta desactivado.
@@ -31,6 +32,9 @@ def main():
     "Key":
                 {"ruta": "/compararKey/<nombre>/<otra>",
                 "valor": "{Suenan bien: True o False}"},
+    "Reproductor":
+		{"ruta": "/reproductor/<nombre>",
+                "valor": "{Como suena la cancion}"},
     "Recomendacion":
 		 {"ruta": "/recomendacion/<nombre>",
                 "valor": "{Canciones que sonarian bien con la pasada como argumento}"},
@@ -72,6 +76,10 @@ def compararKey(nombre,otra):
 @app.route("/recomendacion/<nombre>")
 def recomendacion(nombre):
 	return jsonify(db.buscar_adecuadas(nombre))
+
+@app.route("/reproducir/<nombre>")
+def reproductor(nombre)
+	return render_template('reproductor.html',nombre=nombre)
 
 
 @app.errorhandler(404)
