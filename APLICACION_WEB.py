@@ -78,7 +78,7 @@ def recomendacion(nombre):
 	return jsonify(db.buscar_adecuadas(nombre))
 
 @app.route("/reproducir/<nombre>")
-def reproductor(nombre)
+def reproductor(nombre):
 	return render_template('reproductor.html',nombre=nombre)
 
 
