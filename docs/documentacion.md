@@ -28,15 +28,15 @@ En mi [Vagrantfile](https://github.com/SergioCruzPerez/InfraestructuraVirtual/bl
 ## Problema con su correspondiente solución
 
 He comentado en mi vagrantfile las órdenes correspondientes a la ejecución de Ansible para que realizara el provisionamiento puesto que obteníamos el siguiente error.
-![img]()
+![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/problema-ansible.png)
 Para solventar esto he tenido que añadir en el fichero /etc/ansible/hosts lo siguiente:
 
-![img]() y esto debe de realizarse tras ejecutar la orden **vagrant up --provider=digital_ocean puesto que es cuando se nos asigna una ip(en ipv4) a nuestra máquina.
-![img]()
+![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/hosts.png) y esto debe de realizarse tras ejecutar la orden **vagrant up --provider=digital_ocean puesto que es cuando se nos asigna una ip(en ipv4) a nuestra máquina.
+![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/digitalocean.png)
 
 Una vez realizado esto el provisionamiento se lleva a cabo sin ningún tipo de problema
 
-![img]()
+![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/ansible.png)
 
 ## Aprovisionamiento
 
@@ -61,13 +61,24 @@ fab -f despliegue/fabfile.py -H vagrant@51.144.180.183 (Tarea a realizar)
 Ejemplos de uso:
 
 - Ejecución de tarea Start
-![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/Start.png)
+![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/Start1.png)
+
+![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/Screenshot%20from%202019-01-14%2018-35-35.png)
 
 - Ejecución de tarea Stop
-![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/Stop.png)
+![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/Stop2.png)
+
+![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/Stop1.png)
 
 - Ejecución de tarea Install
-![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/Install.png)
+![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/Install1.png)
 
-- Ejecución de tarea Delete
-![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/Delete.png)
+## Últimas aportaciones
+
+Con esta última imagen dejamos constancia de que se ha creado en nuestra máquina todo lo que necesitamos, por una parte tenemos la carpeta static que contiene los archivos .mp3 y por otra parte tenemos nuestro repositorio clonado.
+
+![img](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/docs/imagenes/ssh.png)
+
+Señalar que se ha añadido una nueva funcionalidad a la aplicación que terminará de estar disponible en la próxima versión puesto que he sido incapaz de cargar los archivos .mp3 en mi reproductor implementado en la [carpeta templates](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/templates/reproductor.html) por lo tanto la ruta /reproducir/<nombr_cancion> no está disponible en esta versión.
+
+
