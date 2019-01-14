@@ -1,6 +1,6 @@
-- hosts: all
+- hosts: mi_pc
   become: yes
-  remote_user: vagrant
+  remote_user: root
   tasks:
   - name: Actualizar los paquetes del sistema
     command: sudo apt-get update
@@ -16,6 +16,8 @@
 
   - name: Instalar Pip
     command: sudo apt-get -y install python-pip
+
+  
 
 
 
