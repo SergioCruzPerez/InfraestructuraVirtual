@@ -15,12 +15,14 @@ def Install():
          run('git pull && pip install -r requirements.txt') 
 	else: """
         run('git clone https://github.com/SergioCruzPerez/InfraestructuraVirtual.git')
+        run('sudo apt-get update && sudo apt-get install python-pip')
         run('cd InfraestructuraVirtual && sudo pip install -r requirements.txt')
 
 def Stop():
-	""" Parar la aplicacion matando el proceso que usa gunicorn """
-	
-	run('sudo pkill gunicorn')
+	""" Parar la aplicacion matando el proceso que usa gunicorn 
+	 
+	run('sudo pkill gunicorn') No correcto porque no sabemos que procesos pueden estar ejecutandose en nuestra maquina con gunicorn y con este comando matariamos todos """
+	run("sudo kill $(ps -ef | grep gunicorn | awk '{print $2}')")
 
 
 def Delete():
