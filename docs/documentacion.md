@@ -1,6 +1,4 @@
-# Vagrant Azure Provider
-
-Esto es un complemento de Vagrant que agrega el proveedor de Microsoft Azure a Vagrant, lo que le permite a Vagrant controlar y aprovisionar máquinas en Microsoft Azure.
+# Desplegando en Digital Ocean
 
 ## Empezando
 
@@ -8,41 +6,14 @@ Pero antes de empezar tenemos que tener instalado [Vagrant](https://www.vagrantu
 
 Se debe de bajar desde la página web puesto que si no tendremos problemas de diversos tipos como podrían ser errores en la verificación de los certificados SSL.
 
-Posteriormente debemos de tener instalado el **plugin** que proporciona Vagrant para Azure de la siguiente forma:
+Posteriormente debemos de tener instalado el **plugin** que proporciona Vagrant para Digital Ocean de la siguiente forma:
 
 ~~~
-$ vagrant box add azure https://github.com/azure/vagrant-azure/raw/v2.0/dummy.box --provider azure
-$ vagrant plugin instalar vagrant-azure
-$ vagrant up --provider = azure
+$vagrant plugin install vagrant-digitalocean
 ~~~
 
-## Azure Active Directory (AAD)
+Instalado el plugin procedemos a crear nuestro vagrantfile donde indicaremos toda la configuración que deseamos que satisfaga nuestra máquina.
 
-Debemos de seguir los siguientes pasos:
-
-1. [Instale el CLI de Azure](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
-
-2. **az login** para iniciar sesión en azure.
-
-3. Ejecute **az ad sp create-for-rbac** para crear una aplicación de Azure Active Directory con acceso a Azure Resource Manager para la suscripción actual de Azure. Si desea ejecutar esto para una suscripción de Azure distinta emplee **az account set --subscription 'your subscription name'**
-
-4. Una vez realizado esto ejecutaremos **az ad sp create-for-rbac** y **az account list --query "[?isDefault].id" -o tsv**.
-
-Con el primer comando obtendremos una salida como esta:
-
-~~~
-{
-  "appId": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-  "displayName": "some-display-name",
-  "name": "http://azure-cli-2017-04-03-15-30-52",
-  "password": "XXXXXXXXXXXXXXXXXXXX",
-  "tenant": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-}
-~~~
-
-Los valores tenant, appId y password se corresponden con los valores de configuración azure.tenant_id, azure.client_id y azure.client_secret en nuestro Vagrantfile.
-
-Y con el segundo comando obtendremos el id de nuestra subscripción que se corresponde con el valor azure.subscription_id.
 
 ## Creación de un Vagrantfile
 
@@ -52,15 +23,20 @@ La idea es que cuando un desarrollador sincroniza su fichero vagrantfile, simple
 
 Debemos de crearlo en la raíz del proyecto y nos encontramos los siguientes parámetros, por ejemplo:
 
-- tenant_id: Tu Azure Active Directory Tenant Id.
-- client_id: Tu Azure Active Directory application client id.
-- client_secret: Tu Azure Active Directory application client secret.
-- subscription_id: La subscripcion de Azure que queremos usar.
-- vm_name: Nombre de la máquina virtual
-- vm_size: Tamaño de máquina virtual que se utilizará: el valor predeterminado es 'Standard_DS2_v2'.
-- m_image_urn: Nombre de la máquina virtual que se usará: por defecto es 'canonical: ubuntuserver: 16.04-LTS: latest'.
-- tcp_endpoints: nos permite abrir puertos de entrada al servicio y poder acceder al servicio web.
-- Con config.vm.provision indicamos el aprovisionador a usar, en nuestro caso ansible y posteriormente indicamos donde se encuentra el fichero de aprovisionamiento.
+En mi [Vagrantfile](https://github.com/SergioCruzPerez/InfraestructuraVirtual/blob/master/Vagrantfile) encontraremos detalladamente las opciones para construir mi máquina y el porqué de la elección.
+
+## Problema con su correspondiente solución
+
+He comentado en mi vagrantfile las órdenes correspondientes a la ejecución de Ansible para que realizara el provisionamiento puesto que obteníamos el siguiente error.
+![img]()
+Para solventar esto he tenido que añadir en el fichero /etc/ansible/hosts lo siguiente:
+
+![img]() y esto debe de realizarse tras ejecutar la orden **vagrant up --provider=digital_ocean puesto que es cuando se nos asigna una ip(en ipv4) a nuestra máquina.
+![img]()
+
+Una vez realizado esto el provisionamiento se lleva a cabo sin ningún tipo de problema
+
+![img]()
 
 ## Aprovisionamiento
 
